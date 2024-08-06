@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Anjaneya RO Water Plant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sri Anjaneya RO Water Plant</h1>
+
+        <div class="date">
+            Date: <span id="currentDate"></span>
+        </div>
+
+        <form id="driverForm">
+            <div class="form-group">
+                <label for="driverStatus">Driver:</label>
+                <select id="driverStatus" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="self">Self</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dieselStatus">Diesel:</label>
+                <select id="dieselStatus" disabled>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+
+            <div id="dieselAmountGroup" class="form-group" style="display: none;">
+                <label for="dieselAmount">Diesel Amount:</label>
+                <input type="number" id="dieselAmount" class="no-spinners">
+                <span id="dieselAmountError" class="error"></span>
+            </div>
+
+            <div id="paymentMethodGroup" class="form-group" style="display: none;">
+                <label>Payment Method:</label>
+                <div class="radio-group">
+                    <input type="radio" id="card" name="paymentMethod" value="card">
+                    <label for="card">Card</label>
+                    <input type="radio" id="cash" name="paymentMethod" value="cash">
+                    <label for="cash">Cash</label>
+                </div>
+                <span id="paymentMethodError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="trips">Trips:</label>
+                <select id="trips" disabled required>
+                    <option value="">Select</option>
+                    <option value="0.5">Half</option>
+                    <option value="1">One</option>
+                    <option value="1.5">One and Half</option>
+                    <option value="2">Two</option>
+                    <option value="above">Above</option>
+                </select>
+                <span id="tripsError" class="error"></span>
+            </div>
+
+            <div id="tripsDetails" style="display: none;">
+                <div id="tripHalfAmount" class="form-group" style="display: none;">
+                    <label for="halfTripAmount">Half Trip Amount:</label>
+                    <input type="number" id="halfTripAmount" class="no-spinners">
+                </div>
+
+                <div id="tripOneAmount" class="form-group" style="display: none;">
+                    <label for="oneTripAmount">One Trip Amount:</label>
+                    <input type="number" id="oneTripAmount" class="no-spinners">
+                </div>
+
+                <div id="tripOneAndHalfFirstAmount" class="form-group" style="display: none;">
+                    <label for="oneAndHalfFirstTripAmount">One and Half Trip (First) Amount:</label>
+                    <input type="number" id="oneAndHalfFirstTripAmount" class="no-spinners">
+                </div>
+
+                <div id="tripOneAndHalfHalfAmount" class="form-group" style="display: none;">
+                    <label for="oneAndHalfHalfTripAmount">One and Half Trip (Half) Amount:</label>
+                    <input type="number" id="oneAndHalfHalfTripAmount" class="no-spinners">
+                </div>
+
+                <div id="tripTwoFirstAmount" class="form-group" style="display: none;">
+                    <label for="twoFirstTripAmount">Two Trips (First) Amount:</label>
+                    <input type="number" id="twoFirstTripAmount" class="no-spinners">
+                </div>
+
+                <div id="tripTwoSecondAmount" class="form-group" style="display: none;">
+                    <label for="twoSecondTripAmount">Two Trips (Second) Amount:</label>
+                    <input type="number" id="twoSecondTripAmount" class="no-spinners">
+                </div>
+            </div>
+
+            <div id="aboveTripsDetails" style="display: none;">
+                <div class="form-group">
+                    <label for="numberOfTrips">Number of Trips:</label>
+                    <input type="number" id="numberOfTrips" min="1" class="no-spinners">
+                </div>
+                <div id="aboveTripsAmounts"></div>
+            </div>
+
+            <div id="phonePayAmounts" class="form-group" style="display: none;"></div>
+
+            <div class="form-group">
+                <label for="totalAmount">Total Amount:</label>
+                <input type="number" id="totalAmount" readonly class="no-spinners">
+                <span id="totalAmountError" class="error"></span>
+            </div>
+
+            <div class="form-group submit-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
